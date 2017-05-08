@@ -132,9 +132,8 @@
 
       // SVG bar graph
 
-      var xScale = d3.scaleOrdinal()
-                        .domain(d3.range(dataset.length))
-                        .rangeRound([0, w], 0.05)
+      var xScale = d3.scaleBand()
+                      .rangeRound([0, w], 0.05);
 
       var svg = d3.select("body")
                   .append("svg")
