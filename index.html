@@ -153,7 +153,7 @@
           .attr("y", function(d){
             return h - 4 * d;
           })
-          .attr("width", w / dataset.length - barPadding)
+          .attr("width", xScale.bandwidth())
           .attr("height", function(d){
             return 4 * d;
           })
