@@ -237,8 +237,30 @@
           dataset = [ 11, 12, 15, 20, 18, 17, 16, 18, 23, 25,
                     5, 10, 13, 19, 21, 25, 22, 18, 15, 13 ];
 
-          svg.selectAll("rect")          
-        })
+          svg.selectAll("rect")
+              .data(dataset)
+              .attr("y", function(d){
+                return h - 4 * d;
+              })
+              .attr("height", function(d){
+                return 4 * d;
+              })
+              .attr("fill",function(d){
+                return "rgb(0, 0, " + (d * 10) + ")"
+              });
+
+          svg.selectAll("text")
+           .data(dataset)
+           .text(function(d) {
+                return d;
+           })
+           .attr("x", function(d, i) {
+                return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
+           })
+           .attr("y", function(d) {
+                return h - (d * 4) + 14;
+           });
+            })
 
       //   Test importing data from csv file
       // d3.csv("./testdata.csv", function(data){
