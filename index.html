@@ -239,6 +239,11 @@
 
           svg.selectAll("rect")
               .data(dataset)
+              .transition()
+              .delay(function(d, i){
+                return i * 100;
+              })
+              .duration(1000)
               .attr("y", function(d){
                 return h - 4 * d;
               })
@@ -251,6 +256,11 @@
 
           svg.selectAll("text")
            .data(dataset)
+           .transition()
+           .delay(function(d, i){
+             return i * 100;
+           })
+           .duration(1000)
            .text(function(d) {
                 return d;
            })
