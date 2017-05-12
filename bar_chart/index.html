@@ -3,8 +3,35 @@
   <head>
     <meta charset="utf-8">
     <title>Bar Chart</title>
+    <script type="text/javascript" src="../d3/d3.js"></script>
+    <style media="screen">
+      .chart rect {
+        fill: steelblue;
+      }
+
+      .chart text {
+        fill: white;
+        font: 10px sans-serif;
+        text-anchor: end;
+      }
+    </style>
   </head>
   <body>
+    <h1>Bar Charts</h1>
+    <svg class='chart'>
+    </svg>
 
+    <script type="text/javascript">
+      var data = [4, 8, 15, 16, 23, 42];
+
+      var width = 420,
+          barHeight = 20;
+
+      var x = d3.scale.linear()
+              .domain([0, d3.max(data)])
+              .range([0, width]);
+
+              
+    </script>
   </body>
 </html>
